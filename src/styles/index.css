@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'OnestRegular';
+  src: url('../fonts/Onest-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OnestMedium';
+  src: url('../fonts/Onest-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OnestSemiBold';
+  src: url('../fonts/Onest-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OnestBold';
+  src: url('../fonts/Onest-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RobotoMedium';
+  src: url('../fonts/RobotoMono-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+    font-family: OnestRegular, sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  color: #03030a;
+  font-family: OnestRegular, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:active {
+  color: #335cff;
+}
+
+ul[class] {
+  list-style: none;
+}
