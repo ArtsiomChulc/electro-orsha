@@ -1,0 +1,35 @@
+.header_btn, .contact_btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    font-weight: 700;
+    font-size: 21px;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+
+.header_btn {
+    background: #fff;
+    border: 1px solid #002992;
+    color: #002992;
+
+    &:hover {
+        background: #002992;
+        color: #fff;
+    }
+}
+
+.contact_btn {
+    color: #FFE248;
+    background: transparent;
+    border: 1px solid #FFE248;
+
+    &:hover {
+        color: rgba(255, 226, 72, 0.75);
+        border: 1px solid rgba(255, 226, 72, 0.75);
+    }
+    &:active {
+        color: #002992;
+        border: 1px solid #002992;
+    }
+}
