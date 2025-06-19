@@ -1,0 +1,14 @@
+.hero_block {
+    max-width: 1520px;
+    height: auto;
+    font-size: 0;
+    position: relative;
+    overflow: hidden;
+
+    > img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
