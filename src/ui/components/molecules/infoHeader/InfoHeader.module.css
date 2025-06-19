@@ -1,0 +1,27 @@
+.info_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+    > svg {
+        width: 43px;
+        height: 43px;
+    }
+
+    .text {
+        font-weight: 500;
+        font-size: 18px;
+        color: #8b8b8b;
+    }
+    .phone_number {
+        font-weight: 500;
+        font-size: 24px;
+        color: #002992;
+    }
+    .address {
+        font-weight: 500;
+        font-size: 18px;
+        color: #272727;
+    }
+}
