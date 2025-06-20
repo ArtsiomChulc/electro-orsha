@@ -1,0 +1,5 @@
+.footer_nav_items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
