@@ -1,6 +1,8 @@
+import { Footer } from '@/ui/components/organizms/footer/Footer';
 import { Header } from '@/ui/components/organizms/header/Header';
 import { NavPanel } from '@/ui/components/organizms/navPanel/NavPanel';
-import { Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router';
+
 import s from './Layout.module.css';
 
 export const Layout = () => {
@@ -11,7 +13,7 @@ export const Layout = () => {
             <div className={s.main_content}>
                 <Outlet />
             </div>
-            <div>footer</div>
+            <Footer />
         </main>
     );
 };

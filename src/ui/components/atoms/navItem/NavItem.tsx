@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 import s from './NavItem.module.css';
 
 type NavItemProps = {
@@ -9,7 +9,12 @@ type NavItemProps = {
 export const NavItem = ({ page, to }: NavItemProps) => {
     return (
         <li className={s.nav_item}>
-            <NavLink to={to}>{page}</NavLink>
+            <NavLink
+                className={({ isActive }) => (isActive ? s.active : '')}
+                to={to}
+            >
+                {page}
+            </NavLink>
         </li>
     );
 };

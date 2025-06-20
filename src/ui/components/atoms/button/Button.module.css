@@ -1,4 +1,4 @@
-.header_btn, .contact_btn {
+.header_btn, .contact_btn, .not_found {
     padding: 10px 20px;
     cursor: pointer;
     transition: all .3s ease-in-out;
@@ -31,5 +31,16 @@
     &:active {
         color: #002992;
         border: 1px solid #002992;
+    }
+}
+
+.not_found {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+
+    &:hover {
+        color: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.75);
     }
 }
