@@ -3,4 +3,5 @@ export enum PATH {
     about = '/about',
     services = '/services',
     contact = '/contact',
+    admin = '/admin',
 }

@@ -1,0 +1,21 @@
+.input {
+    font-weight: 700;
+    font-size: 21px;
+    text-align: center;
+    letter-spacing: 1.5px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    outline: 2px solid #00aff9;
+    border: none;
+
+    &:focus {
+        outline: 3px solid #00aff9;
+    }
+}
+
+.error {
+    color: rgb(246, 5, 41);
+    font-size: 16px;
+    border: 2px solid rgb(246, 5, 41);
+    padding: 12px 18px;
+}

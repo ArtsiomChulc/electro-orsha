@@ -1,4 +1,4 @@
-.header_btn, .contact_btn, .not_found {
+.header_btn, .contact_btn, .not_found, .log_in {
     padding: 10px 20px;
     cursor: pointer;
     transition: all .3s ease-in-out;
@@ -42,5 +42,16 @@
     &:hover {
         color: rgba(255, 255, 255, 0.75);
         border: 1px solid rgba(255, 255, 255, 0.75);
+    }
+}
+
+.log_in {
+    background: #002992;
+    color: #fff;
+    border-radius: 6px;
+
+    &:hover {
+        background: rgba(0, 41, 146, 0.75);
+        color: rgba(255, 255, 255, 0.75);
     }
 }

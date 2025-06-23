@@ -5,6 +5,7 @@ export const navItems: NavItemsType[] = [
     { page: 'Про нас', to: PATH.about },
     { page: 'Наши работы', to: PATH.services },
     { page: 'Контакты', to: PATH.contact },
+    { page: 'Администратор', to: PATH.admin },
 ];
 
 export type NavItemsType = {
