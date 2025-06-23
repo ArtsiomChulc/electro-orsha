@@ -6,14 +6,23 @@ import { getAuth } from 'firebase/auth';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
+const apiKey = import.meta.env.VITE_FIREBASE_API_KEY;
+const authDomain = import.meta.env.VITE_FIREBASE_AUTH_DOMAIN;
+const projectId = import.meta.env.VITE_FIREBASE_PROJECT_ID;
+const storageBucket = import.meta.env.VITE_FIREBASE_STORAGE_BC;
+const messagingSenderId = import.meta.env.VITE_FIREBASE_MSG_SENDER_ID;
+const appId = import.meta.env.VITE_FIREBASE_APP_ID;
+const measurementId = import.meta.env.VITE_FIREBASE_MEASURE_ID;
+
 const firebaseConfig = {
-    apiKey: 'AIzaSyC0UpAFrulDBAJDTQ_rkfuOsdWxzC1NZQ8',
-    authDomain: 'electro-auth.firebaseapp.com',
-    projectId: 'electro-auth',
-    storageBucket: 'electro-auth.firebasestorage.app',
-    messagingSenderId: '1013353588709',
-    appId: '1:1013353588709:web:f3628f2c2975013aa3710c',
-    measurementId: 'G-K7CV5HFWYC',
+    apiKey: apiKey,
+    authDomain: authDomain,
+    projectId: projectId,
+    storageBucket: storageBucket,
+    messagingSenderId: messagingSenderId,
+    appId: appId,
+    measurementId: measurementId,
 };
 
 // Initialize Firebase
