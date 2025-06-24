@@ -1,11 +1,11 @@
 import { adminSlice } from '@/features/admin/adminSlice';
+import { contentSlice } from '@/features/content/contentSlice';
 import { configureStore } from '@reduxjs/toolkit';
 
 export const store = configureStore({
     reducer: {
         admin: adminSlice.reducer,
-        // mainBlock: commentsReducer,
-        // aboutBlock: usersReducer,
+        content: contentSlice.reducer,
     },
 });
 

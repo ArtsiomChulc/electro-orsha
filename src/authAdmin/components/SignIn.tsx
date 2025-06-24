@@ -1,6 +1,6 @@
 import { useAppDispatch } from '@/app/hooks/hooks';
 import { Input } from '@/authAdmin/components/input/Input';
-import { setUser } from '@/features/admin/adminSlice';
+import { setUser, setLoading } from '@/features/admin/adminSlice';
 import { auth } from '@/firebase';
 import { Button } from '@/ui/components/atoms/button/Button';
 import { signInWithEmailAndPassword } from 'firebase/auth';
@@ -20,7 +20,7 @@ export const SignIn = () => {
 
     const login = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
+        dispatch(setLoading(true));
         signInWithEmailAndPassword(auth, email, password)
             .then(user => {
                 const email = user.user.email;
@@ -46,6 +46,9 @@ export const SignIn = () => {
             .catch((error: unknown) => {
                 console.log(error);
                 setError('Ты точно Админ?');
+            })
+            .finally(() => {
+                dispatch(setLoading(false));
             });
     };
     return (

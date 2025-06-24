@@ -1,12 +1,9 @@
-import { useAppSelector } from '@/app/hooks/hooks';
 import { db } from '@/firebase';
 import { HeroBlock } from '@/ui/components/molecules/heroBlock/HeroBlock';
 import { collection, getDocs } from 'firebase/firestore';
 import { useEffect } from 'react';
 
 export const MainPage = () => {
-    const isAdmin = useAppSelector(state => state.admin.isAdmin);
-
     useEffect(() => {
         const getCol = async () => {
             const snapshot = await getDocs(collection(db, 'hero_block'));
@@ -34,7 +31,7 @@ export const MainPage = () => {
     }, []);
     return (
         <>
-            <HeroBlock isAdmin={isAdmin} />
+            <HeroBlock />
         </>
     );
 };

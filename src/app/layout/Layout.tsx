@@ -1,3 +1,4 @@
+import { useAppSelector } from '@/app/hooks/hooks';
 import { useAdminAuth } from '@/app/hooks/useAdminAuth';
 import { Footer } from '@/ui/components/organizms/footer/Footer';
 import { Header } from '@/ui/components/organizms/header/Header';
@@ -7,13 +8,16 @@ import { Outlet } from 'react-router';
 import s from './Layout.module.css';
 
 export const Layout = () => {
+    const isAdmin = useAppSelector(state => state.admin.isAdmin);
+    const isLoading = useAppSelector(state => state.admin.isLoading);
+
     useAdminAuth();
     return (
         <main className={s.main}>
             <Header />
-            <NavPanel />
+            <NavPanel isAdmin={isAdmin} isLoading={isLoading} />
             <div className={s.main_content}>
-                <Outlet />
+                {isAdmin ? <div></div> : <Outlet />}
             </div>
             <Footer />
         </main>
