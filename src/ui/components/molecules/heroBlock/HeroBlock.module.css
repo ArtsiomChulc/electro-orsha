@@ -1,5 +1,6 @@
 .hero_block {
     max-width: 1520px;
+    width: 100%;
     height: auto;
     font-size: 0;
     position: relative;
