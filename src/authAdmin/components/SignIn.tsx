@@ -1,5 +1,6 @@
 import { useAppDispatch } from '@/app/hooks/hooks';
 import { Input } from '@/authAdmin/components/input/Input';
+import { ADMIN_EMAILS } from '@/authAdmin/schemas';
 import { setUser, setLoading } from '@/features/admin/adminSlice';
 import { auth } from '@/firebase';
 import { Button } from '@/ui/components/atoms/button/Button';
@@ -7,8 +8,6 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState, FormEvent } from 'react';
 import { useNavigate } from 'react-router';
 import s from './SignIn.module.css';
-
-const ADMIN_EMAILS = ['test@mail.ru']; // todo
 
 export const SignIn = () => {
     const [email, setEmail] = useState('');

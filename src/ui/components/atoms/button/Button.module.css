@@ -8,7 +8,7 @@
     letter-spacing: 1.5px;
 }
 
-.header_btn {
+.header_btn, .table_btn {
     background: #fff;
     border: 1px solid #002992;
     color: #002992;
@@ -54,4 +54,15 @@
         background: rgba(0, 41, 146, 0.75);
         color: rgba(255, 255, 255, 0.75);
     }
+}
+
+.table_btn {
+    width: 100%;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 1.3px;
 }

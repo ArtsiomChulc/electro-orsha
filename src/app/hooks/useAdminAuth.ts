@@ -1,10 +1,9 @@
+import { ADMIN_EMAILS } from '@/authAdmin/schemas';
 import { useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '@/firebase';
 import { setUser, logout, setLoading } from '@/features/admin/adminSlice';
 import { useAppDispatch } from '@/app/hooks/hooks';
-
-const ADMIN_EMAILS = ['test@mail.ru']; // todo
 
 export const useAdminAuth = () => {
     const dispatch = useAppDispatch();

@@ -2,7 +2,12 @@ import s from './Button.module.css';
 
 type ButtonProps = {
     title: string;
-    typeBtn: 'header_btn' | 'contact_btn' | 'not_found' | 'log_in';
+    typeBtn:
+        | 'header_btn'
+        | 'contact_btn'
+        | 'not_found'
+        | 'log_in'
+        | 'table_btn';
     onClick?: () => void;
 };
 
