@@ -4,7 +4,7 @@ import s from './Logo.module.css';
 
 type LogoProps = {
     logoTitle: string;
-    isLightLogo: boolean;
+    isLightLogo?: boolean;
 };
 
 export const Logo = ({ logoTitle, isLightLogo = false }: LogoProps) => {
