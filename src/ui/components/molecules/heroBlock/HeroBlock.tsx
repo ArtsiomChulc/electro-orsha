@@ -1,20 +1,19 @@
+import { useAppSelector } from '@/app/hooks/hooks';
 import heroImg from '@/assets/img/hero_image.png';
-import adminImg from '@/assets/img/admin.webp';
 import { HeroBlockContent } from '@/ui/components/atoms/heroBlockContent/HeroBlockContent';
+import { Loader } from '@/ui/components/atoms/loader/Loader';
 import s from './HeroBlock.module.css';
 
-type HeroBlockProps = {
-    isAdmin: boolean;
-};
+export const HeroBlock = () => {
+    const loading = useAppSelector(state => state.admin.isLoading);
 
-export const HeroBlock = ({ isAdmin }: HeroBlockProps) => {
+    if (loading)
+        return (
+            <Loader size={50} container_height={'100vh'} color={'#002992'} />
+        );
     return (
         <div className={s.hero_block}>
-            {isAdmin ? (
-                <img src={adminImg} alt='hero image' />
-            ) : (
-                <img src={heroImg} alt='hero image' />
-            )}
+            <img src={heroImg} alt='hero image' />
             <HeroBlockContent />
         </div>
     );

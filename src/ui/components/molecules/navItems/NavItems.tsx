@@ -8,10 +8,12 @@ type NavItemsProps = {
 
 export const NavItems = ({ items }: NavItemsProps) => {
     return (
-        <ul className={s.nav_list}>
-            {items.map(({ to, page }) => {
-                return <NavItem key={to} page={page} to={to} />;
-            })}
-        </ul>
+        <>
+            <ul className={s.nav_list}>
+                {items.map(({ to, page }) => {
+                    return <NavItem key={to} page={page} to={to} />;
+                })}
+            </ul>
+        </>
     );
 };
