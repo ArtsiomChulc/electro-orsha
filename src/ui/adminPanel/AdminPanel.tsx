@@ -1,11 +1,11 @@
 import { useAppSelector, useAppDispatch } from '@/app/hooks/hooks';
 import { Input } from '@/authAdmin/components/input/Input';
 import { setHeaderInfo } from '@/features/content/contentSlice';
-import { Button } from '@/ui/components/atoms/button/Button';
-import s from './AdminPanel.module.css';
-import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '@/firebase';
+import { Button } from '@/ui/components/atoms/button/Button';
+import { doc, updateDoc } from 'firebase/firestore';
 import { useState } from 'react';
+import s from './AdminPanel.module.css';
 
 export const AdminPanel = () => {
     const dispatch = useAppDispatch();
@@ -36,8 +36,6 @@ export const AdminPanel = () => {
                     [key]: editableValue,
                 })
             );
-
-            console.log(`Поле ${key} обновлено: ${editableValue}`);
             setEditingId(null);
             setEditableValue('');
         } catch (error) {
@@ -68,6 +66,12 @@ export const AdminPanel = () => {
                                             onChange={e =>
                                                 setEditableValue(e.target.value)
                                             }
+                                            onKeyDown={e => {
+                                                if (e.key === 'Enter') {
+                                                    handleSave(editingId);
+                                                }
+                                            }}
+                                            autoFocus
                                         />
                                     ) : (
                                         value
