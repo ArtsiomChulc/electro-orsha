@@ -6,10 +6,27 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    @media screen and (max-width: 576px) {
+        padding-inline: 30px;
+    }
 
     .header_info {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         gap: 43px;
+
+        @media screen and (max-width: 768px) {
+            gap: 15px;
+        }
     }
 }
+
+/*@media screen and (max-width: 772.9px) {*/
+/*    .header_info {*/
+/*        gap: 15px;*/
+/*    }*/
+/*}*/

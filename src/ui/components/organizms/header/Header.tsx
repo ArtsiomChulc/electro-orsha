@@ -8,6 +8,7 @@ import { InfoHeader } from '@/ui/components/molecules/infoHeader/InfoHeader';
 import { Logo } from '@/ui/components/atoms/logo/Logo';
 import { signOut } from 'firebase/auth';
 import { auth } from '@/firebase';
+import { toast } from 'react-toastify';
 import s from './Header.module.css';
 
 export const Header = () => {
@@ -21,7 +22,13 @@ export const Header = () => {
     useHeaderInfo();
 
     const logOutHandler = () => {
-        signOut(auth);
+        signOut(auth).then(() => {
+            toast('Вы вышли из редактирования', {
+                position: 'bottom-left',
+                autoClose: 1000,
+                type: 'success',
+            });
+        });
         dispatch(logout());
     };
     return (

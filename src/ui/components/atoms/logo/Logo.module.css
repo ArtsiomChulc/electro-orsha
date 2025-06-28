@@ -9,7 +9,7 @@
 
     > p {
         font-weight: 700;
-        font-size: 36px;
+        font-size: calc(23px + 13 * (100vw / 1440));
     }
 
     .gradient {

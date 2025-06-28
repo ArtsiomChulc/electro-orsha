@@ -21,7 +21,7 @@ export const NavPanel = ({ isAdmin, isLoading }: NavPanelProps) => {
     return (
         <div className={s.nav_panel}>
             {isAdmin ? (
-                <span>Режим редактирования</span>
+                <span className={s.edite_mode}>Режим редактирования</span>
             ) : (
                 <NavItems items={navItems} />
             )}
