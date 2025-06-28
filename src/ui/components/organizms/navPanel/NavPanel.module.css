@@ -2,4 +2,10 @@
     width: 100%;
     padding: 10px 122px;
     background: linear-gradient(180deg, #002992 0%, #000 100%);
+
+    .edite_mode {
+        display: block;
+        color: white;
+        text-align: center;
+    }
 }
