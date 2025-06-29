@@ -3,6 +3,10 @@
     padding: 10px 122px;
     background: linear-gradient(180deg, #002992 0%, #000 100%);
 
+    @media screen and (max-width: 768px) {
+        padding: 10px 15px;
+    }
+
     .edite_mode {
         display: block;
         color: white;
