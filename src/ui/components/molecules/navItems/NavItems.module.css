@@ -1,6 +1,75 @@
-.nav_list {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 50px;
+.nav_wrapper {
+    width: 100%;
+    .nav_list {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 50px;
+        position: relative;
+
+        .burger_menu_wrapper {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            .burger_menu {
+                display: inline-block;
+                width: 35px;
+                height: 1px;
+                background: white;
+                position: relative;
+
+                &:before, &:after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 1px;
+                    background: white;
+                    transition: all .2s ease-in-out;
+                }
+
+                &:before {
+                    top: -10px;
+                }
+
+                &:after {
+                    top: 10px;
+                }
+
+                &.menu_open {
+                    background: transparent;
+
+                    &:before {
+                        transform: rotate(45deg);
+                        top: 0;
+                    }
+
+                    &:after {
+                        transform: rotate(-45deg);
+                        top: 0;
+                    }
+                }
+            }
+        }
+
+        .mobile_menu_container {
+            width: 100%;
+            padding: 10px 20px;
+            background: linear-gradient(180deg, #002992 0%, #000 100%);
+            position: absolute;
+            z-index: 20;
+            top: 50px;
+
+            .nav_list_mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 15px;
+            }
+        }
+    }
 }
