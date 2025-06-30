@@ -1,15 +1,20 @@
 import { useAppSelector, useAppDispatch } from '@/app/hooks/hooks';
 import { Input } from '@/authAdmin/components/input/Input';
-import { setHeaderInfo } from '@/features/content/contentSlice';
+import {
+    setHeaderInfo,
+    setLoadingContent,
+} from '@/features/content/contentSlice';
 import { db } from '@/firebase';
 import { Button } from '@/ui/components/atoms/button/Button';
 import { doc, updateDoc } from 'firebase/firestore';
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
+import { toast } from 'react-toastify';
 import s from './AdminPanel.module.css';
 
 export const AdminPanel = () => {
     const dispatch = useAppDispatch();
     const headerData = useAppSelector(state => state.content.headerInfo);
+    const loading = useAppSelector(state => state.content.isLoadingContent);
     const [editingId, setEditingId] = useState<string | null>(null);
     const [editableValue, setEditableValue] = useState<string>('');
 
@@ -23,7 +28,21 @@ export const AdminPanel = () => {
         setEditableValue(value);
     };
 
+    const handleChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.target.value.length > 40) {
+            toast('Вводи не больше 40 символов', {
+                type: 'error',
+                autoClose: 3000,
+                position: 'bottom-left',
+                style: { background: '#ba0707', color: '#fff' },
+            });
+            return;
+        }
+        setEditableValue(e.target.value);
+    };
+
     const handleSave = async (key: string) => {
+        dispatch(setLoadingContent(true));
         try {
             const docRef = doc(db, 'header_info', 'u68vAztyyynLVwTfjmDD');
             await updateDoc(docRef, {
@@ -38,8 +57,12 @@ export const AdminPanel = () => {
             );
             setEditingId(null);
             setEditableValue('');
+            dispatch(setLoadingContent(false));
         } catch (error) {
             console.error('Ошибка при обновлении документа:', error);
+            dispatch(setLoadingContent(false));
+        } finally {
+            dispatch(setLoadingContent(false));
         }
     };
 
@@ -62,10 +85,9 @@ export const AdminPanel = () => {
                                 <td>
                                     {editingId === key ? (
                                         <Input
+                                            loading={loading}
                                             value={editableValue}
-                                            onChange={e =>
-                                                setEditableValue(e.target.value)
-                                            }
+                                            onChange={handleChangeValue}
                                             onKeyDown={e => {
                                                 if (e.key === 'Enter') {
                                                     handleSave(editingId);
