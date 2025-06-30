@@ -1,12 +1,9 @@
 import { useAppSelector, useAppDispatch } from '@/app/hooks/hooks';
-import { useClickOutside } from '@/app/hooks/useClickOutside';
-import { Input } from '@/authAdmin/components/input/Input';
 import {
     setHeaderInfo,
     setLoadingContent,
 } from '@/features/content/contentSlice';
 import { db } from '@/firebase';
-import { Button } from '@/ui/components/atoms/button/Button';
 import { TableData } from '@/ui/components/molecules/tableData/TableData';
 import { doc, updateDoc } from 'firebase/firestore';
 import { useState, ChangeEvent } from 'react';
