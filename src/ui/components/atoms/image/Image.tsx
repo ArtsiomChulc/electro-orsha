@@ -1,5 +1,5 @@
 import { Button } from '@/ui/components/atoms/button/Button';
-import React, { useState, ReactNode } from 'react';
+import React, { useState } from 'react';
 import styles from './Image.module.css';
 
 type ImageProps = {
