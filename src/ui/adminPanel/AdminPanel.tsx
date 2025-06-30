@@ -16,7 +16,6 @@ export const AdminPanel = () => {
     const loading = useAppSelector(state => state.content.isLoadingContent);
     const [editingId, setEditingId] = useState<string | null>(null);
     const [editableValue, setEditableValue] = useState<string>('');
-    // const ref = useClickOutside<HTMLTableCellElement>(() => setEditingId(null));
 
     const headerDataMap = Object.entries(headerData).map(([key, value]) => ({
         key,
@@ -79,59 +78,6 @@ export const AdminPanel = () => {
                 loading={loading}
                 onCancelEdit={() => setEditingId(null)}
             />
-            {/*<h1>Text content Management</h1>*/}
-            {/*<table className={s.admin_table}>*/}
-            {/*    <thead>*/}
-            {/*        <tr>*/}
-            {/*            <th>Контент</th>*/}
-            {/*            <th>Значение</th>*/}
-            {/*            <th>Действия</th>*/}
-            {/*        </tr>*/}
-            {/*    </thead>*/}
-            {/*    <tbody>*/}
-            {/*        {headerDataMap.map(({ key, value }) => {*/}
-            {/*            return (*/}
-            {/*                <tr key={key}>*/}
-            {/*                    <td>{key}</td>*/}
-            {/*                    <td ref={ref}>*/}
-            {/*                        {editingId === key ? (*/}
-            {/*                            <Input*/}
-            {/*                                loading={loading}*/}
-            {/*                                value={editableValue}*/}
-            {/*                                onChange={handleChangeValue}*/}
-            {/*                                onKeyDown={e => {*/}
-            {/*                                    if (e.key === 'Enter') {*/}
-            {/*                                        handleSave(editingId);*/}
-            {/*                                    }*/}
-            {/*                                }}*/}
-            {/*                                autoFocus*/}
-            {/*                            />*/}
-            {/*                        ) : (*/}
-            {/*                            value*/}
-            {/*                        )}*/}
-            {/*                    </td>*/}
-            {/*                    <td>*/}
-            {/*                        {editingId === key ? (*/}
-            {/*                            <Button*/}
-            {/*                                title={'Save'}*/}
-            {/*                                typeBtn={'table_btn'}*/}
-            {/*                                onClick={() => handleSave(key)}*/}
-            {/*                            />*/}
-            {/*                        ) : (*/}
-            {/*                            <Button*/}
-            {/*                                title='Edit'*/}
-            {/*                                typeBtn='table_btn'*/}
-            {/*                                onClick={() =>*/}
-            {/*                                    handleEdit(key, String(value))*/}
-            {/*                                }*/}
-            {/*                            />*/}
-            {/*                        )}*/}
-            {/*                    </td>*/}
-            {/*                </tr>*/}
-            {/*            );*/}
-            {/*        })}*/}
-            {/*    </tbody>*/}
-            {/*</table>*/}
         </div>
     );
 };
