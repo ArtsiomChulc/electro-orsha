@@ -1,6 +1,6 @@
 import { useAppSelector } from '@/app/hooks/hooks';
 import heroImg from '@/assets/img/hero_image.png';
-import { HeroBlockContent } from '@/ui/components/atoms/heroBlockContent/HeroBlockContent';
+import { Image } from '@/ui/components/atoms/image/Image';
 import { Loader } from '@/ui/components/atoms/loader/Loader';
 import s from './HeroBlock.module.css';
 
@@ -13,8 +13,13 @@ export const HeroBlock = () => {
         );
     return (
         <div className={s.hero_block}>
-            <img src={heroImg} alt='hero image' />
-            <HeroBlockContent />
+            <Image
+                src={heroImg}
+                alt='hero image'
+                title={'БЕЗОПАСНО И НАДЕЖНО'}
+                subtitle={'Мы — сервис, которому вы можете доверять'}
+                buttonLabel={'Связаться с нами'}
+            />
         </div>
     );
 };

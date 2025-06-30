@@ -1,3 +1,4 @@
+import React from 'react';
 import s from './Button.module.css';
 
 type ButtonProps = {
@@ -8,7 +9,7 @@ type ButtonProps = {
         | 'not_found'
         | 'log_in'
         | 'table_btn';
-    onClick?: () => void;
+    onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 export const Button = ({ title, typeBtn, onClick }: ButtonProps) => {

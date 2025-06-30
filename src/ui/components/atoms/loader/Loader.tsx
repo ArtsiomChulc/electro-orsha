@@ -3,6 +3,7 @@ import s from './Loader.module.css';
 type LoaderProps = {
     size?: number;
     color?: string;
+    justifyContent?: 'center' | 'flex-start' | 'flex-end';
     container_width?: number | string;
     container_height?: number | string;
 };
@@ -12,6 +13,7 @@ export const Loader = ({
     size,
     container_width = '100%',
     container_height = '1rem',
+    justifyContent = 'center',
 }: LoaderProps) => {
     return (
         <div
@@ -20,7 +22,7 @@ export const Loader = ({
                 height: `${container_height}`,
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
+                justifyContent: `${justifyContent}`,
             }}
         >
             <div

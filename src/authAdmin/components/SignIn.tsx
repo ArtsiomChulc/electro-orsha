@@ -63,6 +63,7 @@ export const SignIn = () => {
             })
             .finally(() => {
                 dispatch(setLoading(false));
+                setError('');
             });
     };
     return (
