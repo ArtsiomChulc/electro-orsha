@@ -8,7 +8,7 @@ type ButtonProps = {
         | 'not_found'
         | 'log_in'
         | 'table_btn';
-    onClick?: () => void;
+    onClick?: (e: any) => void;
 };
 
 export const Button = ({ title, typeBtn, onClick }: ButtonProps) => {
