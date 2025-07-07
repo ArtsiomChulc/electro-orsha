@@ -1,12 +1,10 @@
-import { PricesBlock } from '@/ui/components/atoms/pricesBlock/PricesBlock';
 import { ServicesBlock } from '@/ui/components/atoms/servicesBlock/ServicesBlock';
-import s from './ServicePrices.module.css';
+import s from './Services.module.css';
 
-export const ServicePrices = () => {
+export const Services = () => {
     return (
         <div className={s.services_container}>
             <ServicesBlock />
-            <PricesBlock />
         </div>
     );
 };

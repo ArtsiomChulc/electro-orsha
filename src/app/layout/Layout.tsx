@@ -1,6 +1,7 @@
 import { useAppSelector } from '@/app/hooks/hooks';
 import { useAdminAuth } from '@/app/hooks/useAdminAuth';
 import { AdminPanel } from '@/ui/adminPanel/AdminPanel';
+import { PricesBtn } from '@/ui/components/atoms/pricesBtn/PricesBtn';
 import { Footer } from '@/ui/components/organizms/footer/Footer';
 import { Header } from '@/ui/components/organizms/header/Header';
 import { NavPanel } from '@/ui/components/organizms/navPanel/NavPanel';
@@ -21,6 +22,7 @@ export const Layout = () => {
                 {isAdmin ? <AdminPanel /> : <Outlet />}
             </div>
             <Footer />
+            <PricesBtn />
         </main>
     );
 };
