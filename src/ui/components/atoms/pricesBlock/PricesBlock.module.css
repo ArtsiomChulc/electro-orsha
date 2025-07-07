@@ -1,2 +1,18 @@
 .prices_container {
+    width: 100%;
+    padding: 20px 15px;
+
+    form {
+
+        label {
+            font-family: sans-serif;
+            font-size: 1rem;
+            padding-right: 10px;
+        }
+
+        select {
+            font-size: 0.9rem;
+            padding: 2px 5px;
+        }
+    }
 }

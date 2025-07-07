@@ -21,13 +21,13 @@ export const ServicesBlock = () => {
                 autoplay={{ delay: 3000, disableOnInteraction: false }}
                 navigation
                 pagination={{ clickable: true }}
-                loop
+                loop={slides.length > 3}
                 spaceBetween={30}
                 slidesPerView={1}
                 className={`mySwiper`}
             >
                 {slides.map((img, index) => (
-                    <SwiperSlide key={index}>
+                    <SwiperSlide key={index} className={s.slider_wrapper}>
                         <Image src={img} alt={`Slide ${index + 1}`} />
                     </SwiperSlide>
                 ))}

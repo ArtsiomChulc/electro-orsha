@@ -1,7 +1,8 @@
 export enum PATH {
     main = '/',
     about = '/about',
-    priceServices = '/price-services',
+    services = '/services',
+    prices = '/prices',
     contact = '/contact',
     admin = '/admin',
 }
