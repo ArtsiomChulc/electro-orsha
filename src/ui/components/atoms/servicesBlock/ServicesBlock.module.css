@@ -1,0 +1,8 @@
+.slider_container {
+    width: 400px;
+    height: 100%;
+
+    > div {
+
+    }
+}

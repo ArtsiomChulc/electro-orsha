@@ -6,6 +6,11 @@ import './styles/index.css';
 import { Provider } from 'react-redux';
 import { RouterProvider } from 'react-router';
 import { ToastContainer } from 'react-toastify';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/autoplay';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>

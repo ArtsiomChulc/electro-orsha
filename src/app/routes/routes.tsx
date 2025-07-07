@@ -4,6 +4,7 @@ import { AuthAdmin } from '@/authAdmin/AuthAdmin';
 import { AboutUs } from '@/pages/about/AboutUs';
 import { MainPage } from '@/pages/main/MainPage';
 import { NotFound } from '@/pages/notFound/NotFound';
+import { ServicePrices } from '@/pages/servicePrices/ServicePrices';
 import { createBrowserRouter } from 'react-router';
 
 export const router = createBrowserRouter([
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
         children: [
             { index: true, Component: MainPage },
             { path: PATH.about, Component: AboutUs },
+            { path: PATH.priceServices, Component: ServicePrices },
             { path: PATH.admin, Component: AuthAdmin },
         ],
     },
