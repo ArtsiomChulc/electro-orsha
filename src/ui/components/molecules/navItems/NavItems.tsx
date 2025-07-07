@@ -2,7 +2,8 @@ import { useClickOutside } from '@/app/hooks/useClickOutside';
 import { useWindowSize } from '@/app/hooks/useWindowSize';
 import { NavItem } from '@/ui/components/atoms/navItem/NavItem';
 import { NavItemsType } from '@/ui/components/organizms/navPanel/schemas/navItems';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router';
 import s from './NavItems.module.css';
 
 type NavItemsProps = {
@@ -17,6 +18,12 @@ export const NavItems = ({ items }: NavItemsProps) => {
     const handlerOpenMenu = () => {
         setIsOpenMenu(!isOpenMenu);
     };
+    const location = useLocation();
+
+    useEffect(() => {
+        setIsOpenMenu(false);
+    }, [location.pathname]);
+
     return (
         <div className={s.nav_wrapper} ref={ref}>
             <ul className={s.nav_list}>
