@@ -1,11 +1,10 @@
 import { useAppSelector, useAppDispatch } from '@/app/hooks/hooks';
-import { Input } from '@/authAdmin/components/input/Input';
 import {
     setHeaderInfo,
     setLoadingContent,
 } from '@/features/content/contentSlice';
 import { db } from '@/firebase';
-import { Button } from '@/ui/components/atoms/button/Button';
+import { TableData } from '@/ui/components/molecules/tableData/TableData';
 import { doc, updateDoc } from 'firebase/firestore';
 import { useState, ChangeEvent } from 'react';
 import { toast } from 'react-toastify';
@@ -68,59 +67,17 @@ export const AdminPanel = () => {
 
     return (
         <div className={s.admin_container}>
-            <h1>Text content Management</h1>
-            <table className={s.admin_table}>
-                <thead>
-                    <tr>
-                        <th>Контент</th>
-                        <th>Значение</th>
-                        <th>Действия</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {headerDataMap.map(({ key, value }) => {
-                        return (
-                            <tr key={key}>
-                                <td>{key}</td>
-                                <td>
-                                    {editingId === key ? (
-                                        <Input
-                                            loading={loading}
-                                            value={editableValue}
-                                            onChange={handleChangeValue}
-                                            onKeyDown={e => {
-                                                if (e.key === 'Enter') {
-                                                    handleSave(editingId);
-                                                }
-                                            }}
-                                            autoFocus
-                                        />
-                                    ) : (
-                                        value
-                                    )}
-                                </td>
-                                <td>
-                                    {editingId === key ? (
-                                        <Button
-                                            title={'Save'}
-                                            typeBtn={'table_btn'}
-                                            onClick={() => handleSave(key)}
-                                        />
-                                    ) : (
-                                        <Button
-                                            title='Edit'
-                                            typeBtn='table_btn'
-                                            onClick={() =>
-                                                handleEdit(key, String(value))
-                                            }
-                                        />
-                                    )}
-                                </td>
-                            </tr>
-                        );
-                    })}
-                </tbody>
-            </table>
+            <TableData
+                title={'Header editing'}
+                data={headerDataMap}
+                editingId={editingId}
+                editableValue={editableValue}
+                onEdit={handleEdit}
+                onChangeValue={handleChangeValue}
+                onSave={handleSave}
+                loading={loading}
+                onCancelEdit={() => setEditingId(null)}
+            />
         </div>
     );
 };
