@@ -3,6 +3,7 @@ import { Button } from '@/ui/components/atoms/button/Button';
 import { Switch } from '@/ui/components/atoms/switch/Switch';
 import { useState, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
+import { requestFormReset } from 'react-dom';
 import { toast } from 'react-toastify';
 import s from './PricesBlock.module.css';
 
@@ -16,6 +17,10 @@ const optionsWork = [
 ];
 
 export const PricesBlock = () => {
+    const emailJsId = import.meta.env.VITE_EMAIL_JS_ID;
+    const emailJsTemplateId = import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID;
+    const emailJsPublicKey = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
+
     const [selectedObject, setSelectedObject] = useState<string | null>(null);
     const [selectedWork, setSelectedWork] = useState<string[]>([]);
     const [selectedSquare, setSelectedSquare] = useState<string>('');
@@ -84,10 +89,10 @@ export const PricesBlock = () => {
 
         emailjs
             .send(
-                'service_oca4upc',
-                'template_45t6foh',
+                emailJsId,
+                emailJsTemplateId,
                 templateParams,
-                'hHY1Uv0WNdP-AHDH5'
+                emailJsPublicKey
             )
             .then(
                 result => {
@@ -101,7 +106,16 @@ export const PricesBlock = () => {
                             color: '#fff',
                         },
                     });
+
+                    setSelectedName('');
+                    setSelectedPhone('');
+                    setSelectedObject(null);
+                    setSelectedWork([]);
+                    setSelectedSquare('');
+                    setSelectedDot('');
+                    setSelectedSwitch('invite');
                 },
+
                 error => {
                     console.error('Ошибка отправки:', error.text);
                     toast('Ошибка отправки заявки.', {
