@@ -46,6 +46,7 @@ export const TableData: React.FC<TableDataProps> = ({
                             <td ref={ref}>
                                 {editingId === key ? (
                                     <Input
+                                        type={'text'}
                                         loading={loading}
                                         value={editableValue}
                                         onChange={onChangeValue}
