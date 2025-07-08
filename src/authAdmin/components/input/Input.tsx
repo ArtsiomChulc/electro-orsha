@@ -1,13 +1,27 @@
 import { Loader } from '@/ui/components/atoms/loader/Loader';
-import { InputHTMLAttributes } from 'react';
+import { InputHTMLAttributes, ChangeEvent } from 'react';
 import s from './Input.module.css';
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
     error?: string;
     loading?: boolean;
+    inputType?: 'checkbox' | 'radio';
+    checked?: boolean;
+    onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-export const Input = ({ error, loading, ...props }: InputProps) => {
+export const Input = ({
+    error,
+    loading,
+    onChange,
+    inputType,
+    checked,
+    ...props
+}: InputProps) => {
+    const classNames = () => {
+        if (inputType) return s[inputType];
+        return s.input;
+    };
     return (
         <>
             {loading ? (
@@ -19,7 +33,16 @@ export const Input = ({ error, loading, ...props }: InputProps) => {
                     color={'#0a44cf'}
                 />
             ) : (
-                <input className={s.input} {...props} />
+                <input
+                    className={classNames()}
+                    onChange={onChange}
+                    checked={checked}
+                    {...props}
+                />
+            )}
+            {inputType === 'radio' && <span className={s.radioCustom}></span>}
+            {inputType === 'checkbox' && (
+                <span className={s.checkboxCustom}></span>
             )}
             {error && <span className={s.error}>{error}</span>}
         </>

@@ -1,5 +1,6 @@
 .slider_container {
-    width: 100%;
+    width: 50%;
     aspect-ratio: 16 / 9;
     max-height: 500px;
+    padding-block: 20px;
 }

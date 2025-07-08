@@ -1,18 +1,82 @@
 .prices_container {
     width: 100%;
     padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    .title {
+        display: block;
+        width: 100%;
+        font-size: 18px;
+        font-family: OnestBold, sans-serif;
+        margin-bottom: 15px;
+    }
+
+    > h2 {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
 
     form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 30px;
 
         label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 6px 10px;
+            border: 1px solid #00aff9;
+            border-radius: 8px;
+            background: rgba(139, 157, 243, 0.1);
+            transition: background .2s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                background: rgba(139, 157, 243, 0.3);
+            }
+
             font-family: sans-serif;
-            font-size: 1rem;
-            padding-right: 10px;
+            font-size: 14px;
         }
 
         select {
             font-size: 0.9rem;
             padding: 2px 5px;
+        }
+
+        .object_type, .work_type {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+    }
+
+    .square {}
+
+    .warning_text {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #f60606;
+        font-size: 12px;
+        padding: 10px;
+
+        p > span {
+            font-size: 16px;
+            padding-right: 8px;
+            align-self: center;
         }
     }
 }
