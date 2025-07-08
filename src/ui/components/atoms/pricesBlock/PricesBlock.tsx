@@ -1,9 +1,8 @@
 import { Input } from '@/authAdmin/components/input/Input';
 import { Button } from '@/ui/components/atoms/button/Button';
 import { Switch } from '@/ui/components/atoms/switch/Switch';
-import { useState, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
-import { requestFormReset } from 'react-dom';
+import { useState, FormEvent } from 'react';
 import { toast } from 'react-toastify';
 import s from './PricesBlock.module.css';
 
