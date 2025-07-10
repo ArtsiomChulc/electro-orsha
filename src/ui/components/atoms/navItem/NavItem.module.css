@@ -17,5 +17,19 @@
             bottom: 0;
             left: 0;
         }
+
+        @media screen and (max-width: 655px) {
+            &:before {
+                display: none;
+            }
+            color: #faa903;
+        }
+    }
+
+    > a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
 }
