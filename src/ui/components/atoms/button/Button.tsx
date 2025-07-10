@@ -12,6 +12,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
         | 'log_in'
         | 'table_btn';
     onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+    className?: string;
 };
 
 export const Button = ({
@@ -20,12 +21,13 @@ export const Button = ({
     onClick,
     size = 'medium',
     position = 'center',
+    className,
     ...props
 }: ButtonProps) => {
     return (
         <button
             onClick={onClick}
-            className={`${s[typeBtn]} ${s[size]} ${s[position]}`}
+            className={`${className} ${s[typeBtn]} ${s[size]} ${s[position]}`}
             {...props}
         >
             {title}
