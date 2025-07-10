@@ -1,15 +1,16 @@
 .logo_container {
     display: flex;
     align-items: center;
+    margin-right: auto;
 
     > svg {
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
     }
 
     > p {
         font-weight: 700;
-        font-size: calc(23px + 13 * (100vw / 1440));
+        font-size: calc(18px + 8 * (100vw / 1520));
     }
 
     .gradient {
