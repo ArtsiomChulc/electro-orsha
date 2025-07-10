@@ -1,15 +1,16 @@
 .header_btn, .contact_btn, .not_found, .log_in {
     padding: 10px 20px;
+    border-radius: 6px;
     cursor: pointer;
     transition: all .3s ease-in-out;
     font-weight: 700;
-    font-size: 21px;
+    font-size: calc(16px + 5 * (100vw / 1270));
     text-align: center;
     letter-spacing: 1.5px;
 }
 
 .header_btn, .table_btn {
-    background: #fff;
+    background: rgba(214, 216, 225, 0.2);
     border: 1px solid #002992;
     color: #002992;
 
@@ -65,4 +66,28 @@
     font-size: 14px;
     text-align: center;
     letter-spacing: 1.3px;
+}
+
+.large {
+    width: 100%;
+}
+
+.medium {
+    padding-inline: 60px;
+}
+
+.small {
+    padding: 7px 17px;
+    font-size: calc(14px + 4 * (100vw / 1270));
+}
+
+.left {
+    margin-right: auto;
+    margin-left: 10px;
+}
+.right {
+    margin-left: auto;
+}
+.center {
+    margin: 0 auto;
 }
