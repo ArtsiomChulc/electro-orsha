@@ -1,9 +1,11 @@
 .imageWrapper {
+    width: 100%;
+    height: auto;
+    min-height: 210px;
     position: relative;
     overflow: hidden;
     background-color: #141414;
     transition: transform 0.3s ease;
-    cursor: pointer;
 }
 
 .image {
@@ -27,11 +29,13 @@
 
 .overlay {
     position: absolute;
+    top: 15px;
     bottom: 0;
-    left: 0;
+    left: 15px;
     right: 0;
+    transform: translate(-15px, -15px);
     padding: 1rem;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    background: transparent;
     color: #fff;
     z-index: 1;
     pointer-events: none;
@@ -46,17 +50,18 @@
 
 .title {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: calc(22px + 14 * (100vw / 900));
     font-weight: 700;
 }
 
 .subtitle {
     margin: 0.25rem 0 0 0;
-    font-size: 0.9rem;
+    font-size: calc(14px + 6 * (100vw / 1440));
     font-weight: 400;
     color: #ccc;
 }
 
 .button {
-    align-self: flex-start;
+    position: absolute;
+    bottom: 10px;
 }
