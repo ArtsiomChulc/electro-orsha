@@ -1,3 +1,5 @@
+import { useWindowSize } from '@/app/hooks/useWindowSize';
+import { Button } from '@/ui/components/atoms/button/Button';
 import { Skeleton } from '@/ui/components/atoms/skeleton/Skeleton';
 import { NavItems } from '@/ui/components/molecules/navItems/NavItems';
 import { navItems } from '@/ui/components/organizms/navPanel/schemas/navItems';
@@ -9,6 +11,7 @@ type NavPanelProps = {
 };
 
 export const NavPanel = ({ isAdmin, isLoading }: NavPanelProps) => {
+    const { width } = useWindowSize();
     if (isLoading)
         return (
             <Skeleton
@@ -24,6 +27,15 @@ export const NavPanel = ({ isAdmin, isLoading }: NavPanelProps) => {
                 <span className={s.edite_mode}>Режим редактирования</span>
             ) : (
                 <NavItems items={navItems} />
+            )}
+
+            {width <= 575.9 && (
+                <Button
+                    size={'small'}
+                    position={'right'}
+                    title={'Заказать услугу'}
+                    typeBtn={'contact_btn'}
+                />
             )}
         </div>
     );

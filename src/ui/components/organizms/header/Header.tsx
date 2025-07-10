@@ -1,4 +1,5 @@
 import { useAppSelector, useAppDispatch } from '@/app/hooks/hooks';
+import { useWindowSize } from '@/app/hooks/useWindowSize';
 import { Location } from '@/assets/svgs/Location';
 import { Mobile } from '@/assets/svgs/Mobile';
 import { logout } from '@/features/admin/adminSlice';
@@ -14,6 +15,7 @@ import s from './Header.module.css';
 export const Header = () => {
     const dispatch = useAppDispatch();
     const isAdmin = useAppSelector(state => state.admin.isAdmin);
+    const { width } = useWindowSize();
     const isLoadingContent = useAppSelector(
         state => state.content.isLoadingContent
     );
@@ -36,18 +38,22 @@ export const Header = () => {
             <Logo logoTitle={'ELECTRO-ORSHA'} />
 
             <div className={s.header_info}>
-                <InfoHeader
-                    isLoading={isLoadingContent}
-                    svg={<Location />}
-                    text={infoHeader.address_city}
-                    subText={infoHeader.address_country}
-                />
-                <InfoHeader
-                    isLoading={isLoadingContent}
-                    svg={<Mobile />}
-                    text={'Звоните в любое время'}
-                    subText={infoHeader.phone}
-                />
+                {width >= 992 && (
+                    <>
+                        <InfoHeader
+                            isLoading={isLoadingContent}
+                            svg={<Location />}
+                            text={infoHeader.address_city}
+                            subText={infoHeader.address_country}
+                        />
+                        <InfoHeader
+                            isLoading={isLoadingContent}
+                            svg={<Mobile />}
+                            text={'Звоните в любое время'}
+                            subText={infoHeader.phone}
+                        />
+                    </>
+                )}
                 {isAdmin && (
                     <Button
                         title={'Выйти'}
@@ -56,12 +62,14 @@ export const Header = () => {
                     />
                 )}
             </div>
-            <Button
-                size={'small'}
-                position={'left'}
-                title={'Заказать услугу'}
-                typeBtn={'header_btn'}
-            />
+            {width >= 576 && (
+                <Button
+                    size={'small'}
+                    position={'right'}
+                    title={'Заказать услугу'}
+                    typeBtn={'header_btn'}
+                />
+            )}
         </div>
     );
 };
