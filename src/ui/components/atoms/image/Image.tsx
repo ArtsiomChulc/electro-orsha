@@ -47,6 +47,7 @@ export const Image: React.FC<ImageProps> = ({
                     </div>
                     {buttonLabel && (
                         <Button
+                            position={'left'}
                             typeBtn={'contact_btn'}
                             onClick={e => {
                                 e.stopPropagation();

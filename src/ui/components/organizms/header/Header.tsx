@@ -56,7 +56,12 @@ export const Header = () => {
                     />
                 )}
             </div>
-            <Button title={'Заказать услугу'} typeBtn={'header_btn'} />
+            <Button
+                size={'small'}
+                position={'left'}
+                title={'Заказать услугу'}
+                typeBtn={'header_btn'}
+            />
         </div>
     );
 };
