@@ -1,19 +1,17 @@
-.skeleton {
-    background: linear-gradient(
-            90deg,
-            #e0e0e0 25%,
-            #f0f0f0 50%,
-            #e0e0e0 75%
-    );
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
-}
-
-@keyframes shimmer {
+@keyframes pulse {
     0% {
-        background-position: -200% 0;
+        background-color: #10396e;
+    }
+    50% {
+        background-color: #30577c;
     }
     100% {
-        background-position: 200% 0;
+        background-color: #10396e;
     }
+}
+
+.skeleton {
+    animation: pulse 1.5s infinite ease-in-out;
+    background-color: #e0e0e0;
+    margin: 8px 0;
 }

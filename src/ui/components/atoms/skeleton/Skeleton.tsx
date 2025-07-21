@@ -5,14 +5,12 @@ type SkeletonProps = {
     width?: number | string;
     height?: number | string;
     borderRadius?: number | string;
-    background?: string;
 };
 
 export const Skeleton: FC<SkeletonProps> = ({
     width = '100%',
     height = '1rem',
     borderRadius = 6,
-    background,
 }) => {
     return (
         <div
@@ -21,7 +19,6 @@ export const Skeleton: FC<SkeletonProps> = ({
                 width,
                 height,
                 borderRadius,
-                ...(background && { background }),
             }}
         />
     );
