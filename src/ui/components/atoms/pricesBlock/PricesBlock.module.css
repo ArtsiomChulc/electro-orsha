@@ -11,7 +11,7 @@
         display: block;
         width: 100%;
         font-size: 18px;
-        font-family: OnestBold, sans-serif;
+        font-family: "OnestSemiBold", sans-serif;
         margin-bottom: 15px;
     }
 
@@ -44,7 +44,7 @@
                 background: rgba(139, 157, 243, 0.3);
             }
 
-            font-family: sans-serif;
+            font-family: "OnestSemiBold", sans-serif;
             font-size: 14px;
         }
 
@@ -63,6 +63,14 @@
     }
 
     .square {}
+
+    .switch_container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 15px;
+    }
 
     .warning_text {
         width: 100%;

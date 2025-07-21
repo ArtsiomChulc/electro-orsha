@@ -218,13 +218,15 @@ export const PricesBlock = () => {
                     />
                 </div>
 
-                <div className={s.switch}>
-                    <Switch
-                        selectedSwitch={selectedSwitch}
-                        setSelectedSwitch={setSelectedSwitch}
-                    />
+                <div className={s.switch_container}>
+                    <p className={s.title}>Нужен выезд мастера?</p>
+                    <div className={s.switch}>
+                        <Switch
+                            selectedSwitch={selectedSwitch}
+                            setSelectedSwitch={setSelectedSwitch}
+                        />
+                    </div>
                 </div>
-
                 <Button
                     title={'Отправить заявку'}
                     typeBtn={'log_in'}

@@ -4,6 +4,8 @@ export type HeaderInfoType = {
     phone: number;
     address_city: string;
     address_country: string;
+    email: string;
+    index: string;
 };
 
 type contentState = {
@@ -16,6 +18,8 @@ const initialState: contentState = {
         phone: 0,
         address_city: '',
         address_country: '',
+        email: '',
+        index: '',
     },
     isLoadingContent: false,
 };
