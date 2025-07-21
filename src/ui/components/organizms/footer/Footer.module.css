@@ -4,19 +4,22 @@
     background: #293554;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
 
     .footer_info {
-        flex: 0 1 25%;
+        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+        padding-inline: 15px;
 
         .text_info {
             font-weight: 400;
-            font-size: 20px;
+            font-size: calc(14px + 6 * (100vw / 1520));
             line-height: 150%;
             color: #fff;
 
@@ -26,17 +29,26 @@
             }
 
             .address {
-
+                display: flex;
+                flex-direction: column;
             }
         }
 
     }
 
     .footer_nav {
-        flex: 0 1 25%;
+        flex: 0;
     }
 
     .footer_social {
-        flex: 0 1 25%;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        justify-content: flex-start;
+
+        > a {
+
+        }
     }
 }
