@@ -50,6 +50,7 @@
         align-items: center;
         gap: 15px;
         justify-content: center;
+        margin-block: auto;
 
         > a {
 
