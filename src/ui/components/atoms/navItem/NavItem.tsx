@@ -12,7 +12,7 @@ export const NavItem = ({ page, to, isFooter = false }: NavItemProps) => {
         <li className={s.nav_item}>
             <NavLink
                 className={({ isActive }) =>
-                    isActive && !isFooter ? s.active : ''
+                    isActive ? (isFooter ? s.active_footer : s.active) : ''
                 }
                 to={to}
             >
