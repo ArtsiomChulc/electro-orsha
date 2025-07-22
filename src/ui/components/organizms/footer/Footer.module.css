@@ -38,6 +38,10 @@
 
     .footer_nav {
         flex: 0;
+
+        > ul {
+            align-items: flex-start;
+        }
     }
 
     .footer_social {
@@ -45,7 +49,7 @@
         display: flex;
         align-items: center;
         gap: 15px;
-        justify-content: flex-start;
+        justify-content: center;
 
         > a {
 
