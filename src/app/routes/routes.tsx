@@ -5,7 +5,7 @@ import { AboutUs } from '@/pages/about/AboutUs';
 import { MainPage } from '@/pages/main/MainPage';
 import { NotFound } from '@/pages/notFound/NotFound';
 import { Services } from '@/pages/services/Services';
-import { PricesBlock } from '@/ui/components/atoms/pricesBlock/PricesBlock';
+import { PricesBlock } from '@/ui/components/organizms/pricesBlock/PricesBlock';
 import { createBrowserRouter } from 'react-router';
 
 export const router = createBrowserRouter([
