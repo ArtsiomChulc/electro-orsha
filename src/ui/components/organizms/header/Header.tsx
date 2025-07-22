@@ -4,11 +4,11 @@ import { Location } from '@/assets/svgs/Location';
 import { Mobile } from '@/assets/svgs/Mobile';
 import { logout } from '@/features/admin/adminSlice';
 import { useHeaderInfo } from '@/features/content/helpers/useHeaderInfo';
-import { Button } from '@/ui/components/atoms/button/Button';
-import { InfoHeader } from '@/ui/components/molecules/infoHeader/InfoHeader';
-import { Logo } from '@/ui/components/atoms/logo/Logo';
-import { signOut } from 'firebase/auth';
 import { auth } from '@/firebase';
+import { Button } from '@/ui/components/atoms/button/Button';
+import { Logo } from '@/ui/components/atoms/logo/Logo';
+import { InfoHeader } from '@/ui/components/molecules/infoHeader/InfoHeader';
+import { signOut } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import s from './Header.module.css';
 

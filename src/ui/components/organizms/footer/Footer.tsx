@@ -1,11 +1,9 @@
 import { useAppSelector } from '@/app/hooks/hooks';
-import viber from '@/assets/icons/viber.png';
-import tg from '@/assets/icons/telegram.png';
-import insta from '@/assets/icons/instagram.png';
-import wp from '@/assets/icons/whatsapp.png';
 import { FooterNavItems } from '@/ui/components/atoms/footerNavItems/FooterNavItems';
 import { Logo } from '@/ui/components/atoms/logo/Logo';
 import { Skeleton } from '@/ui/components/atoms/skeleton/Skeleton';
+import { SocialIcon } from '@/ui/components/atoms/socialIcon/SocialIcon';
+import { socialIconsSchemas } from '@/ui/components/organizms/footer/schemas';
 import s from './Footer.module.css';
 
 export const Footer = () => {
@@ -56,18 +54,16 @@ export const Footer = () => {
                 <FooterNavItems />
             </div>
             <div className={s.footer_social}>
-                <a href='/' target={'_blank'}>
-                    <img src={viber} alt={'viber'} width={50} height={50} />
-                </a>
-                <a href='/' target={'_blank'}>
-                    <img src={tg} alt={'telegram'} width={50} height={50} />
-                </a>
-                <a href='/' target={'_blank'}>
-                    <img src={wp} alt={'whatsapp'} width={50} height={50} />
-                </a>
-                <a href='/' target={'_blank'}>
-                    <img src={insta} alt={'instagram'} width={50} height={50} />
-                </a>
+                {socialIconsSchemas.map(({ icon, alt, link }) => (
+                    <SocialIcon
+                        key={alt}
+                        href={link}
+                        icon={icon}
+                        alt={alt}
+                        width={30}
+                        height={30}
+                    />
+                ))}
             </div>
         </footer>
     );

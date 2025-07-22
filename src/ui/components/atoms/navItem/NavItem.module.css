@@ -26,6 +26,10 @@
         }
     }
 
+    .active_footer {
+        color: #faa903;
+    }
+
     > a {
         display: inline-flex;
         align-items: center;
