@@ -1,8 +1,4 @@
 import { useAppSelector } from '@/app/hooks/hooks';
-import viber from '@/assets/icons/viber.png';
-import tg from '@/assets/icons/telegram.png';
-import insta from '@/assets/icons/instagram.png';
-import wp from '@/assets/icons/whatsapp.png';
 import { FooterNavItems } from '@/ui/components/atoms/footerNavItems/FooterNavItems';
 import { Logo } from '@/ui/components/atoms/logo/Logo';
 import { Skeleton } from '@/ui/components/atoms/skeleton/Skeleton';
