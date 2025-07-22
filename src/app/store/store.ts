@@ -1,11 +1,13 @@
 import { adminSlice } from '@/features/admin/adminSlice';
 import { contentSlice } from '@/features/content/contentSlice';
+import { priceSlice } from '@/features/price/priceSlice';
 import { configureStore } from '@reduxjs/toolkit';
 
 export const store = configureStore({
     reducer: {
         admin: adminSlice.reducer,
         content: contentSlice.reducer,
+        price: priceSlice.reducer,
     },
 });
 
