@@ -23,8 +23,8 @@ export const Layout = () => {
             <div className={s.main_content}>
                 {isAdmin ? <AdminPanel /> : <Outlet />}
             </div>
-            <Footer />
-            {location.pathname !== PATH.prices && <PricesBtn />}
+            {!isAdmin && <Footer />}
+            {location.pathname !== PATH.prices && !isAdmin && <PricesBtn />}
         </main>
     );
 };

@@ -1,5 +1,5 @@
 import { useClickOutside } from '@/app/hooks/useClickOutside';
-import React from 'react';
+import { ChangeEvent, FC } from 'react';
 import { Input } from '@/authAdmin/components/input/Input';
 import { Button } from '@/ui/components/atoms/button/Button';
 import s from './TableData.module.css';
@@ -10,13 +10,13 @@ type TableDataProps = {
     editingId: string | null;
     editableValue: string;
     onEdit: (id: string, value: string) => void;
-    onChangeValue: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChangeValue: (e: ChangeEvent<HTMLInputElement>) => void;
     onSave: (key: string) => void;
     loading: boolean;
     onCancelEdit: () => void;
 };
 
-export const TableData: React.FC<TableDataProps> = ({
+export const TableData: FC<TableDataProps> = ({
     title,
     data,
     editingId,
@@ -34,7 +34,7 @@ export const TableData: React.FC<TableDataProps> = ({
             <table className={s.admin_table}>
                 <thead>
                     <tr>
-                        <th>Контент</th>
+                        <th>Ключ</th>
                         <th>Значение</th>
                         <th>Действия</th>
                     </tr>
@@ -46,6 +46,8 @@ export const TableData: React.FC<TableDataProps> = ({
                             <td ref={ref}>
                                 {editingId === key ? (
                                     <Input
+                                        disabled={loading}
+                                        className={s.table_input}
                                         type={'text'}
                                         loading={loading}
                                         value={editableValue}
@@ -61,12 +63,15 @@ export const TableData: React.FC<TableDataProps> = ({
                                     value
                                 )}
                             </td>
-                            <td>
+                            <td
+                                className={`${s.table_btn} ${loading ? s.disabled : ''}`}
+                            >
                                 {editingId === key ? (
                                     <Button
                                         title={'Save'}
                                         typeBtn={'table_btn'}
                                         onClick={() => onSave(key)}
+                                        disabled={loading}
                                     />
                                 ) : (
                                     <Button
@@ -75,6 +80,7 @@ export const TableData: React.FC<TableDataProps> = ({
                                         onClick={() =>
                                             onEdit(key, String(value))
                                         }
+                                        disabled={loading}
                                     />
                                 )}
                             </td>

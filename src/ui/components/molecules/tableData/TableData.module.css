@@ -1,0 +1,64 @@
+.admin_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th:first-child, td:first-child {
+            max-width: 80px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        thead {
+            th {
+                border-bottom: 2px solid #333;
+                padding: 10px;
+                text-align: left;
+            }
+
+        }
+
+        tbody {
+
+            tr {
+                width: 100%;
+
+                .table_input {
+                    padding: 6px 10px;
+
+                    &:focus {
+                        background: #eef2f6;
+                    }
+                }
+
+                .table_btn {
+                    width: 160px;
+
+                    &.disabled {
+                        opacity: .5;
+                        pointer-events: none;
+
+                        &:hover {
+                            color: inherit;
+                            background: inherit;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

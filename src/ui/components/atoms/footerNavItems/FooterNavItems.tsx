@@ -6,7 +6,7 @@ export const FooterNavItems = () => {
     return (
         <ul className={s.footer_nav_items}>
             {navItems.map(({ to, page }) => {
-                return <NavItem isFooter={true} to={to} page={page} />;
+                return <NavItem key={to} isFooter={true} to={to} page={page} />;
             })}
         </ul>
     );
