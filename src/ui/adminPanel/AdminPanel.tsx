@@ -68,7 +68,7 @@ export const AdminPanel = () => {
     return (
         <div className={s.admin_container}>
             <TableData
-                title={'Header editing'}
+                title={'Содержимое шапки'}
                 data={headerDataMap}
                 editingId={editingId}
                 editableValue={editableValue}

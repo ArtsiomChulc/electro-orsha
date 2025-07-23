@@ -44,6 +44,8 @@ export const TableData: FC<TableDataProps> = ({
                             <td ref={ref}>
                                 {editingId === key ? (
                                     <Input
+                                        disabled={loading}
+                                        className={s.table_input}
                                         type={'text'}
                                         loading={loading}
                                         value={editableValue}
@@ -59,12 +61,15 @@ export const TableData: FC<TableDataProps> = ({
                                     value
                                 )}
                             </td>
-                            <td>
+                            <td
+                                className={`${s.table_btn} ${loading ? s.disabled : ''}`}
+                            >
                                 {editingId === key ? (
                                     <Button
                                         title={'Save'}
                                         typeBtn={'table_btn'}
                                         onClick={() => onSave(key)}
+                                        disabled={loading}
                                     />
                                 ) : (
                                     <Button
@@ -73,6 +78,7 @@ export const TableData: FC<TableDataProps> = ({
                                         onClick={() =>
                                             onEdit(key, String(value))
                                         }
+                                        disabled={loading}
                                     />
                                 )}
                             </td>

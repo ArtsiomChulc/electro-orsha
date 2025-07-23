@@ -9,6 +9,10 @@
     border: none;
     position: relative;
 
+    &.disabled {
+        opacity: .5;
+    }
+
     &:focus {
         outline: 3px solid #00aff9;
     }

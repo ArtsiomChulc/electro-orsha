@@ -34,7 +34,7 @@ export const Input = ({
                 />
             ) : (
                 <input
-                    className={classNames()}
+                    className={`${classNames()} ${props.disabled ? s.disabled : ''}`}
                     onChange={onChange}
                     checked={checked}
                     {...props}
