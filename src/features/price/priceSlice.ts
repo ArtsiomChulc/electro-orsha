@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export type PriceType = {
-    pointPrice: number;
-    meterPrice: number;
+    pointPrice: string;
+    meterPrice: string;
 };
 
 type contentState = {
@@ -12,8 +12,8 @@ type contentState = {
 
 const initialState: contentState = {
     priceInfo: {
-        pointPrice: 0,
-        meterPrice: 0,
+        pointPrice: '',
+        meterPrice: '',
     },
     isLoadingContent: false,
 };

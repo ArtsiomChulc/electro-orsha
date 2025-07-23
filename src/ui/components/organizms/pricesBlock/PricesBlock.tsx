@@ -87,12 +87,12 @@ export const PricesBlock = () => {
 
     const handleChangeDot = (value: string) => {
         setSelectedDot(value);
-        setPointsPrice(+value * pointPrice);
+        setPointsPrice(+value * +pointPrice);
     };
 
     const handleChangeMeter = (value: string) => {
         setSelectedMeters(value);
-        setMetersPrice(+value * meterPrice);
+        setMetersPrice(+value * +meterPrice);
     };
 
     const handleChangeName = (value: string) => {
