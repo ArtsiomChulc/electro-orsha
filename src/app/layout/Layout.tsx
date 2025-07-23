@@ -18,13 +18,13 @@ export const Layout = () => {
     useAdminAuth();
     return (
         <main className={s.main}>
-            <Header />
+            {!isAdmin && <Header />}
             <NavPanel isAdmin={isAdmin} isLoading={isLoading} />
             <div className={s.main_content}>
                 {isAdmin ? <AdminPanel /> : <Outlet />}
             </div>
-            <Footer />
-            {location.pathname !== PATH.prices && <PricesBtn />}
+            {!isAdmin && <Footer />}
+            {location.pathname !== PATH.prices && !isAdmin && <PricesBtn />}
         </main>
     );
 };
