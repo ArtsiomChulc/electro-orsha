@@ -34,6 +34,7 @@ export const TableData: FC<TableDataProps> = ({
             <table className={s.admin_table}>
                 <thead>
                     <tr>
+                        <th>Ключ</th>
                         <th>Значение</th>
                         <th>Действия</th>
                     </tr>
@@ -41,6 +42,7 @@ export const TableData: FC<TableDataProps> = ({
                 <tbody>
                     {data.map(({ key, value }) => (
                         <tr key={key}>
+                            <td>{key}</td>
                             <td ref={ref}>
                                 {editingId === key ? (
                                     <Input
