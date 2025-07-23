@@ -18,7 +18,7 @@ export const Layout = () => {
     useAdminAuth();
     return (
         <main className={s.main}>
-            {!isAdmin && <Header />}
+            <Header />
             <NavPanel isAdmin={isAdmin} isLoading={isLoading} />
             <div className={s.main_content}>
                 {isAdmin ? <AdminPanel /> : <Outlet />}
