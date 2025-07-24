@@ -62,7 +62,7 @@ export const Header = () => {
                     />
                 )}
             </div>
-            {width >= 576 && (
+            {width >= 576 && !isAdmin && (
                 <Button
                     size={'small'}
                     position={'right'}

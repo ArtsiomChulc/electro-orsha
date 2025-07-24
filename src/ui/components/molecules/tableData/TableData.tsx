@@ -6,7 +6,7 @@ import s from './TableData.module.css';
 
 type TableDataProps = {
     title: string;
-    data: Array<{ key: string; value: string | number }>;
+    data: Array<{ key: string; value: string | number | boolean | null }>;
     editingId: string | null;
     editableValue: string;
     onEdit: (id: string, value: string) => void;
