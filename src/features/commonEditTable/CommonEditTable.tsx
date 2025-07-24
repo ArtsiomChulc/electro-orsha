@@ -1,23 +1,35 @@
-import { useAppSelector, useAppDispatch } from '@/app/hooks/hooks';
-import {
-    setHeaderInfo,
-    setLoadingContent,
-} from '@/features/content/contentSlice';
+import { useAppDispatch } from '@/app/hooks/hooks';
+import { setLoadingContent } from '@/features/price/priceSlice';
 import { db } from '@/firebase';
 import { TableData } from '@/ui/components/molecules/tableData/TableData';
+import { PayloadActionCreator } from '@reduxjs/toolkit';
 import { doc, updateDoc } from 'firebase/firestore';
 import { useState, ChangeEvent } from 'react';
 import { toast } from 'react-toastify';
-import s from '../TableEdit.module.css';
+import s from './TableEdit.module.css';
 
-export const HeaderTableEdit = () => {
+type CommonEditTableProps<T extends Record<string, never>> = {
+    data: T;
+    path: string;
+    pathSegment: string;
+    title: string;
+    loading: boolean;
+    setData: PayloadActionCreator<T>;
+};
+
+export const CommonEditTable = <T extends Record<string, never>>({
+    path,
+    pathSegment,
+    data,
+    title,
+    loading,
+    setData,
+}: CommonEditTableProps<T>) => {
     const dispatch = useAppDispatch();
-    const headerData = useAppSelector(state => state.content.headerInfo);
-    const loading = useAppSelector(state => state.content.isLoadingContent);
     const [editingId, setEditingId] = useState<string | null>(null);
     const [editableValue, setEditableValue] = useState<string>('');
 
-    const headerDataMap = Object.entries(headerData).map(([key, value]) => ({
+    const priceDataMap = Object.entries(data).map(([key, value]) => ({
         key,
         value,
     }));
@@ -43,16 +55,16 @@ export const HeaderTableEdit = () => {
     const handleSave = async (key: string) => {
         dispatch(setLoadingContent(true));
         try {
-            const docRef = doc(db, 'header_info', 'u68vAztyyynLVwTfjmDD');
+            const docRef = doc(db, path, pathSegment);
             await updateDoc(docRef, {
                 [key]: editableValue,
             });
 
             dispatch(
-                setHeaderInfo({
-                    ...headerData,
+                setData({
+                    ...data,
                     [key]: editableValue,
-                })
+                } as T)
             );
             setEditingId(null);
             setEditableValue('');
@@ -68,8 +80,8 @@ export const HeaderTableEdit = () => {
     return (
         <div className={s.edit_container}>
             <TableData
-                title={'Содержимое шапки'}
-                data={headerDataMap}
+                title={title}
+                data={priceDataMap}
                 editingId={editingId}
                 editableValue={editableValue}
                 onEdit={handleEdit}
