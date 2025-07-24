@@ -8,7 +8,7 @@ import { useState, ChangeEvent } from 'react';
 import { toast } from 'react-toastify';
 import s from './TableEdit.module.css';
 
-type CommonEditTableProps<T extends Record<string, any>> = {
+type CommonEditTableProps<T extends Record<string, never>> = {
     data: T;
     path: string;
     pathSegment: string;
@@ -17,7 +17,7 @@ type CommonEditTableProps<T extends Record<string, any>> = {
     setData: PayloadActionCreator<T>;
 };
 
-export const CommonEditTable = <T extends Record<string, any>>({
+export const CommonEditTable = <T extends Record<string, never>>({
     path,
     pathSegment,
     data,
